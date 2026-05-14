@@ -1,0 +1,662 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <title>Arrivo — Conference Poster (A2)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Krona+One&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" />
+    <style>
+      /* ─────────────────────────────────────────────────────────────────
+     Arrivo · A2 Conference Poster
+     Design canvas: 1240 × 1754 px  (A2 portrait, 1:√2)
+     ───────────────────────────────────────────────────────────────── */
+
+      :root {
+        --green: #0e500f;
+        --green-2: #33b135;
+        --mint: #b0ddb1;
+        --sage: #e4f0e4;
+        --sand: #cdac7d;
+        --terracotta: #c57952;
+        --paper: #f4f1e8;
+        --ink: #14201a;
+        --ink-soft: #4a5a4d;
+        --font-display: "Krona One", "Arial Black", "Helvetica Neue", sans-serif;
+        --font-ui: "Plus Jakarta Sans", system-ui, sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html,
+      body {
+        background: #2a2a2a;
+        min-height: 100%;
+        font-family: var(--font-ui);
+      }
+
+      /* The page container — centers the poster horizontally, allows scrolling */
+      .stage {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 24px;
+      }
+
+      .poster {
+        position: relative;
+        /* Design canvas: 1240×1754 px, kept in px so internal sizing stays sharp.       */
+        /* `zoom` then enlarges the whole thing to A2 physical size (420×594mm ≈ 1587×2244 */
+        /* CSS px at 96dpi). Browser zoom (Cmd/Ctrl + ±) still works ON TOP of this, so   */
+        /* you can zoom in to inspect details normally.                                  */
+        width: 1240px;
+        height: 1754px;
+        zoom: 1.281;
+        background: var(--paper);
+        color: var(--ink);
+        overflow: hidden;
+        background-image: radial-gradient(rgba(20, 32, 26, 0.03) 1px, transparent 1.5px), radial-gradient(rgba(20, 32, 26, 0.02) 1px, transparent 1.5px);
+        background-size:
+          18px 18px,
+          33px 33px;
+        background-position:
+          0 0,
+          9px 9px;
+        box-shadow:
+          0 30px 80px rgba(0, 0, 0, 0.4),
+          0 8px 20px rgba(0, 0, 0, 0.25);
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* True A2 paper size for print/PDF export */
+      @page {
+        size: A2 portrait;
+        margin: 0;
+      }
+      @media print {
+        html,
+        body {
+          background: #fff;
+          margin: 0;
+          padding: 0;
+        }
+        .stage {
+          padding: 0;
+          min-height: 0;
+          display: block;
+        }
+        .poster {
+          zoom: 1;
+          width: 420mm;
+          height: 594mm;
+          box-shadow: none;
+          transform: none;
+        }
+      }
+
+      /* Editorial corner marks */
+      .page-no-tl,
+      .page-no-br {
+        position: absolute;
+        font-family: var(--font-ui);
+        font-size: 10px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        font-weight: 700;
+        color: var(--ink);
+        opacity: 0.4;
+        z-index: 5;
+      }
+      .page-no-tl {
+        top: 22px;
+        left: 80px;
+      }
+      .page-no-br {
+        bottom: 22px;
+        right: 80px;
+      }
+
+      /* ── 1. Top brand bar (130px tall) ───────────────────────────── */
+      .top-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding: 60px 80px 0;
+        height: 60px;
+        flex-shrink: 0;
+      }
+      .top-logo {
+        height: 50px;
+        width: auto;
+        display: block;
+      }
+      .top-meta {
+        display: flex;
+        gap: 40px;
+        align-items: flex-end;
+        padding-bottom: 4px;
+      }
+      .top-meta .col {
+        text-align: right;
+        font-family: var(--font-ui);
+      }
+      .top-meta .k {
+        font-size: 11px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--ink);
+        font-weight: 700;
+        opacity: 0.45;
+        margin-bottom: 4px;
+      }
+      .top-meta .v {
+        font-size: 15px;
+        font-weight: 600;
+        color: var(--ink);
+      }
+
+      .rule {
+        height: 2px;
+        background: var(--ink);
+        margin: 16px 80px 0;
+        opacity: 0.9;
+        flex-shrink: 0;
+      }
+      .rule.thin {
+        height: 1px;
+        opacity: 0.2;
+      }
+
+      /* ── 2. Hero (~620px tall) ────────────────────────────────────── */
+      .hero {
+        position: relative;
+        padding: 30px 80px 30px;
+        flex-shrink: 0;
+      }
+      .headline {
+        font-family: var(--font-display);
+        color: var(--ink);
+        letter-spacing: -0.015em;
+        line-height: 0.94;
+        position: relative;
+        z-index: 3;
+      }
+      .headline .l1 {
+        font-size: 134px;
+        display: block;
+      }
+      .headline .l2 {
+        font-size: 134px;
+        display: block;
+        color: var(--green);
+      }
+      .headline .l3 {
+        display: block;
+        font-family: var(--font-ui);
+        font-weight: 600;
+        font-size: 70px;
+        color: var(--ink-soft);
+        margin-top: 28px;
+        letter-spacing: -0.02em;
+      }
+
+      /* Bird mark — anchored bottom-right, clearly below the headline */
+      .bird-wrap {
+        position: absolute;
+        right: 96px;
+        bottom: 28px;
+        width: 280px;
+        height: 188px;
+        pointer-events: none;
+        z-index: 2;
+      }
+      .bird-wrap .bird {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: right bottom;
+      }
+      /* Migration arc — dashed terracotta path coming in from the left */
+      .bird-wrap .arc {
+        position: absolute;
+        left: -200px;
+        top: 30px;
+        width: 240px;
+        height: 160px;
+        pointer-events: none;
+      }
+
+      /* Stamp — top-right of hero */
+      .stamp {
+        position: absolute;
+        right: 80px;
+        top: 36px;
+        width: 118px;
+        height: 118px;
+        border: 1.5px dashed var(--terracotta);
+        border-radius: 50%;
+        color: var(--terracotta);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transform: rotate(-9deg);
+        text-align: center;
+        background: radial-gradient(circle, rgba(197, 121, 82, 0.07), transparent 70%);
+        font-family: var(--font-ui);
+        z-index: 4;
+      }
+      .stamp .t1,
+      .stamp .t3 {
+        font-size: 9px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+      .stamp .t2 {
+        font-family: var(--font-display);
+        font-size: 20px;
+        margin: 3px 0;
+      }
+      .stamp .ln {
+        width: 26px;
+        height: 1px;
+        background: var(--terracotta);
+        opacity: 0.6;
+      }
+
+      /* ── 3. Subhead ribbon ───────────────────────────────────────── */
+      .ribbon {
+        display: flex;
+        align-items: center;
+        gap: 22px;
+        padding: 0 80px;
+        height: 60px;
+        flex-shrink: 0;
+        align-self: center;
+      }
+      .ribbon .hash {
+        font-family: var(--font-display);
+        font-size: 30px;
+        color: var(--green);
+        line-height: 1;
+      }
+      .ribbon .dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--ink);
+        opacity: 0.45;
+      }
+      .ribbon .label {
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--ink-soft);
+      }
+
+      /* ── 4. Manifesto ────────────────────────────────────────────── */
+      .manifesto {
+        padding: 28px 80px 0;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 44px;
+        align-items: start;
+        flex-shrink: 0;
+      }
+      .manifesto-screenshots {
+        display: flex;
+        gap: 16px;
+        align-items: flex-start;
+      }
+      .app-screenshot {
+        width: 180px;
+        height: auto;
+        display: block;
+        border-radius: 20px;
+        box-shadow: 0 8px 32px rgba(20, 32, 26, 0.18);
+      }
+      .eyebrow {
+        font-family: var(--font-ui);
+        font-weight: 900;
+        font-size: 20px;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: var(--ink);
+        padding-top: 10px;
+        border-top: 2px solid var(--ink);
+        display: block;
+        margin-bottom: 16px;
+      }
+      .text-center {
+        text-align: justify;
+      }
+      .manifesto p {
+        font-family: var(--font-ui);
+        font-weight: 400;
+        font-size: 19px;
+        line-height: 1.5;
+        color: var(--ink);
+        text-wrap: pretty;
+      }
+      .manifesto p + p {
+        margin-top: 12px;
+      }
+      .manifesto .em {
+        font-weight: 700;
+        color: var(--green);
+      }
+
+      /* ── 5. Four-feature grid ────────────────────────────────────── */
+      .features {
+        margin: 30px 80px 0;
+        padding-top: 30px;
+        border-top: 2px solid var(--ink);
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        flex-shrink: 0;
+      }
+      .feature {
+        padding: 0 24px;
+        position: relative;
+      }
+      .feature:first-child {
+        padding-left: 0;
+      }
+      .feature:last-child {
+        padding-right: 0;
+      }
+      .feature + .feature::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 6px;
+        bottom: 6px;
+        width: 1px;
+        background: var(--ink);
+        opacity: 0.16;
+      }
+      .feature .num {
+        font-family: var(--font-display);
+        font-size: 26px;
+        color: var(--green);
+        display: block;
+        letter-spacing: 0;
+      }
+      .feature .ficon {
+        width: 40px;
+        height: 40px;
+        stroke: var(--ink);
+        stroke-width: 1.5;
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        display: block;
+      }
+      .feature .title {
+        font-family: var(--font-ui);
+        font-weight: 700;
+        font-size: 20px;
+        color: var(--ink);
+        margin-bottom: 6px;
+        line-height: 1.18;
+      }
+      .feature .desc {
+        font-family: var(--font-ui);
+        font-weight: 400;
+        font-size: 15px;
+        color: var(--ink-soft);
+        line-height: 1.5;
+        text-align: justify;
+      }
+      .feature .spacer {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 18px;
+      }
+
+      /* ── 6. Quote band ───────────────────────────────────────────── */
+      .quote {
+        margin: 30px 80px 0;
+        padding: 30px 0;
+        border-top: 2px solid var(--ink);
+        /* border-bottom: 2px solid var(--ink); */
+        text-align: center;
+        flex-shrink: 0;
+      }
+      .quote .text {
+        font-family: var(--font-display);
+        font-size: 58px;
+        line-height: 1.05;
+        color: var(--ink);
+        letter-spacing: -0.01em;
+      }
+      .quote .text .acc {
+        color: var(--green);
+      }
+      .quote .by {
+        font-family: var(--font-ui);
+        font-weight: 600;
+        font-size: 11px;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: var(--ink-soft);
+        margin-top: 14px;
+      }
+
+      /* ── 7. Footer / colophon (natural flow) ─────────────────────── */
+      .colophon {
+        padding: 30px 80px 28px;
+        display: grid;
+        grid-template-columns: 1.2fr 1.2fr 1fr;
+        gap: 30px;
+        font-family: var(--font-ui);
+        flex-grow: 1;
+        background: #c57952;
+      }
+      .colophon .col .k {
+        font-size: 18px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: #2f2f2f;
+        font-weight: 900;
+        margin-bottom: 10px;
+      }
+      .colophon .col .v {
+        font-size: 16px;
+        color: #2f2f2f;
+        font-weight: 500;
+        line-height: 1.55;
+      }
+      .colophon .col .v .name {
+        font-weight: 700;
+      }
+      .colophon .col.contact {
+        position: relative;
+      }
+      .qr-code {
+        width: 160px;
+        height: 160px;
+        display: block;
+        border-radius: 6px;
+      }
+      .colophon .col .hash-big {
+        font-family: var(--font-display);
+        font-size: 28px;
+        color: #fff;
+        line-height: 1;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="stage">
+      <article class="poster" id="poster" data-screen-label="A2 Conference Poster">
+        <div class="page-no-tl" style="display: none">A2 · Portrait · 420 × 594 mm</div>
+        <div class="page-no-br">No. 01 / 2026</div>
+
+        <!-- 1. Top brand bar -->
+        <header class="top-bar">
+          <img src="../assets/Arrivo_Logo_Transparent.svg" alt="Arrivo" class="top-logo" />
+          <div class="top-meta">
+            <div class="col">
+              <div class="k">Veranstaltung</div>
+              <div class="v">Nachhaltigkeitstag</div>
+            </div>
+            <div class="col">
+              <div class="k">Datum · Ort</div>
+              <div class="v">11 Juni 2026 · Graz</div>
+            </div>
+          </div>
+        </header>
+
+        <div class="rule"></div>
+
+        <!-- 2. Hero -->
+        <section class="hero">
+          <h1 class="headline">
+            <span class="l1">Nachhaltig</span>
+            <span class="l2">ankommen.</span>
+            <span class="l3">— in Graz. Mit arriv0</span>
+          </h1>
+
+          <div class="stamp" aria-hidden="true">
+            <div class="t1">Ankunft</div>
+            <div class="ln"></div>
+            <div class="t2">Graz</div>
+            <div class="ln"></div>
+            <div class="t3">2026</div>
+          </div>
+        </section>
+
+        <!-- 3. Subhead ribbon -->
+        <div class="ribbon">
+          <div class="hash">#gogreen</div>
+          <div class="dot"></div>
+          <div class="label">Eine Community-App für junge Newcomer in Graz · iOS &amp; Android</div>
+        </div>
+
+        <!-- 4. Manifesto -->
+        <section class="manifesto">
+          <div class="manifesto-screenshots">
+            <img src="../assets/screenshot.svg" alt="arriv0 App Screenshot" class="app-screenshot" />
+            <img src="../assets/screenshot2.svg" alt="arriv0 App Screenshot 2" class="app-screenshot" />
+            <img src="../assets/screenshot3.svg" alt="arriv0 App Screenshot 2" class="app-screenshot" />
+          </div>
+          <div>
+            <span class="eyebrow">Was ist arriv0?</span>
+            <p class="text-center">
+              Arrivo hilft jungen Menschen zwischen 18 und 35 — Studierende, Erasmus-Gäste, Berufseinsteiger, welche
+              <span class="em">neu in Graz</span> sind, sich nachhaltig zurechtzufinden. Bio-Läden, Bauern- und Flohmärkte, Repair-Cafés, Studi-Rabatte, Sharing-Angebote und die lebendige Community
+              dahinter.
+            </p>
+            <p class="text-center">
+              Alle Inhalte werden von Menschen recherchiert und kuratiert,
+              <span class="em">bewusst ohne KI</span> — für vertrauenswürdige, transparente Information ohne algorithmischen Filter. Das passt zur Haltung, mit der wir die App bauen: schlank,
+              energieeffizient, offen.
+            </p>
+            <p class="text-center">
+              arriv0 lebt seine Werte auch technisch:
+              <span class="em">Green Hosting</span>, minimaler Serverbedarf und Dark Mode als Standard. Nachhaltigkeit ist keine Funktion, sie ist die Grundhaltung.
+            </p>
+          </div>
+        </section>
+
+        <!-- 5. Four-feature grid -->
+        <section class="features">
+          <div class="feature">
+            <div class="spacer">
+              <span class="num">01</span>
+              <svg class="ficon" viewBox="0 0 24 24">
+                <path d="M9 4 3 7v13l6-3 6 3 6-3V4l-6 3-6-3z" />
+                <path d="M9 4v13M15 7v13" />
+              </svg>
+            </div>
+            <div class="title">Finden &amp; Entdecken</div>
+            <div class="desc">Interaktive Karte: Bio-Läden, Second Hand, Sharing, Repair — angepasst an deine Interessen.</div>
+          </div>
+          <div class="feature">
+            <div class="spacer">
+              <span class="num">02</span>
+              <svg class="ficon" viewBox="0 0 24 24">
+                <path d="M3 9h18l-2 11H5L3 9z" />
+                <path d="M8 9V6a4 4 0 0 1 8 0v3" />
+              </svg>
+            </div>
+            <div class="title">Märkte &amp; Flohmärkte</div>
+            <div class="desc">Lendplatz, Kaiser-Josef, Andritz und alle Fetzenmärkte der Stadt — mit Erinnerungen.</div>
+          </div>
+          <div class="feature">
+            <div class="spacer">
+              <span class="num">03</span>
+              <svg class="ficon" viewBox="0 0 24 24">
+                <circle cx="9" cy="8" r="4" />
+                <path d="M3 21a6 6 0 0 1 12 0" />
+                <circle cx="17" cy="6" r="3" />
+                <path d="M21 19a4 4 0 0 0-6-3.4" />
+              </svg>
+            </div>
+            <div class="title">Community &amp; Events</div>
+            <div class="desc">Workshops, Demos und Repair-Cafés — finden, merken, hingehen und erleben.</div>
+          </div>
+          <div class="feature">
+            <div class="spacer">
+              <span class="num">04</span>
+              <svg class="ficon" viewBox="0 0 24 24">
+                <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19.2 2.96c.81 6.83-3.6 15.04-8.2 17.04zM2 22s2-2 6-4.5" />
+              </svg>
+            </div>
+            <div class="title">Lernen &amp; DIY</div>
+            <div class="desc">Reparaturanleitungen, Tipps für nachhaltigen Alltag, Kurse — kuratiert, nicht algorithmisch.</div>
+          </div>
+        </section>
+
+        <!-- 6. Quote band -->
+        <section class="quote">
+          <div class="text">Bei Null anfangen, <span class="acc">grün weitermachen.</span></div>
+        </section>
+
+        <!-- 7. Footer / colophon -->
+        <footer class="colophon">
+          <div class="col">
+            <div class="k">Team</div>
+            <div class="v">
+              <span class="name">Christoph Himmler</span> · Projektleitung<br />
+              <span class="name">Philipp Pointl</span> · Marketing<br />
+              <span class="name">David Sommer</span> · Organisation<br />
+              <span class="name">Stefan Wild</span> · Technik
+            </div>
+          </div>
+          <div class="col">
+            <div class="k">Projekt</div>
+            <div class="v">
+              Mobile App für junge Newcomer<br />
+              iOS &amp; Android · DE / EN<br />
+              Bewusst ohne KI · Green Hosting<br />
+              Dokumentation V1.4 · April 2026
+            </div>
+          </div>
+          <div class="col contact">
+            <div class="k">Prototype</div>
+            <img src="../assets/qrcode.svg" alt="QR-Code zum Prototype" class="qr-code" />
+          </div>
+        </footer>
+      </article>
+    </div>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script>
+      // No transform-based scaling — the poster is at true A2 size via CSS `zoom`.
+      // Browser zoom (Cmd/Ctrl + plus/minus, pinch) works normally on top of this.
+      // If you want a fit-to-window override, use the browser's zoom-out.
+    </script>
+  </body>
+</html>
