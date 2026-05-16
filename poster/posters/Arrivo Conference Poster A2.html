@@ -188,11 +188,11 @@
         z-index: 3;
       }
       .headline .l1 {
-        font-size: 134px;
+        font-size: 115px;
         display: block;
       }
       .headline .l2 {
-        font-size: 134px;
+        font-size: 115px;
         display: block;
         color: var(--green);
       }
@@ -200,7 +200,7 @@
         display: block;
         font-family: var(--font-ui);
         font-weight: 600;
-        font-size: 70px;
+        font-size: 50px;
         color: var(--ink-soft);
         margin-top: 28px;
         letter-spacing: -0.02em;
@@ -239,9 +239,9 @@
         position: absolute;
         right: 80px;
         top: 36px;
-        width: 118px;
-        height: 118px;
-        border: 1.5px dashed var(--terracotta);
+        width: 132px;
+        height: 132px;
+        border: 2.5px dashed var(--terracotta);
         border-radius: 50%;
         color: var(--terracotta);
         display: flex;
@@ -256,14 +256,14 @@
       }
       .stamp .t1,
       .stamp .t3 {
-        font-size: 9px;
+        font-size: 12px;
         letter-spacing: 0.22em;
         text-transform: uppercase;
         font-weight: 700;
       }
       .stamp .t2 {
         font-family: var(--font-display);
-        font-size: 20px;
+        font-size: 24px;
         margin: 3px 0;
       }
       .stamp .ln {
@@ -313,11 +313,11 @@
       }
       .manifesto-screenshots {
         display: flex;
-        gap: 16px;
+        gap: 30px;
         align-items: flex-start;
       }
       .app-screenshot {
-        width: 180px;
+        width: 260px;
         height: auto;
         display: block;
         border-radius: 20px;
@@ -326,9 +326,8 @@
       .eyebrow {
         font-family: var(--font-ui);
         font-weight: 900;
-        font-size: 20px;
+        font-size: 30px;
         letter-spacing: 0.24em;
-        text-transform: uppercase;
         color: var(--ink);
         padding-top: 10px;
         border-top: 2px solid var(--ink);
@@ -341,7 +340,7 @@
       .manifesto p {
         font-family: var(--font-ui);
         font-weight: 400;
-        font-size: 19px;
+        font-size: 20.3px;
         line-height: 1.5;
         color: var(--ink);
         text-wrap: pretty;
@@ -501,7 +500,6 @@
     <div class="stage">
       <article class="poster" id="poster" data-screen-label="A2 Conference Poster">
         <div class="page-no-tl" style="display: none">A2 · Portrait · 420 × 594 mm</div>
-        <div class="page-no-br">No. 01 / 2026</div>
 
         <!-- 1. Top brand bar -->
         <header class="top-bar">
@@ -530,9 +528,7 @@
 
           <div class="stamp" aria-hidden="true">
             <div class="t1">Ankunft</div>
-            <div class="ln"></div>
             <div class="t2">Graz</div>
-            <div class="ln"></div>
             <div class="t3">2026</div>
           </div>
         </section>
@@ -549,23 +545,22 @@
           <div class="manifesto-screenshots">
             <img src="../assets/screenshot.svg" alt="arriv0 App Screenshot" class="app-screenshot" />
             <img src="../assets/screenshot2.svg" alt="arriv0 App Screenshot 2" class="app-screenshot" />
-            <img src="../assets/screenshot3.svg" alt="arriv0 App Screenshot 2" class="app-screenshot" />
           </div>
           <div>
             <span class="eyebrow">Was ist arriv0?</span>
             <p class="text-center">
-              Arrivo hilft jungen Menschen zwischen 18 und 35 — Studierende, Erasmus-Gäste, Berufseinsteiger, welche
-              <span class="em">neu in Graz</span> sind, sich nachhaltig zurechtzufinden. Bio-Läden, Bauern- und Flohmärkte, Repair-Cafés, Studi-Rabatte, Sharing-Angebote und die lebendige Community
-              dahinter.
+              arriv0 hilft jungen Menschen zwischen 18 und 35; Studierende, Erasmus-Gäste, Berufseinsteiger, die
+              <span class="em">neu in Graz</span> sind, sich nachhaltig zurechtzufinden. Bio-Läden, Bauern und Flohmärkte, Repair-Cafés, Studi-Rabatte und Sharing-Angebote.
             </p>
             <p class="text-center">
               Alle Inhalte werden von Menschen recherchiert und kuratiert,
-              <span class="em">bewusst ohne KI</span> — für vertrauenswürdige, transparente Information ohne algorithmischen Filter. Das passt zur Haltung, mit der wir die App bauen: schlank,
-              energieeffizient, offen.
+              <span class="em">bewusst ohne KI</span> für vertrauenswürdige, transparente Information. Die App verfolgt dabei einen schlanken und energieffizenten
+              Ansatz und repräsentiert dabei unsere nachhaltige Arbeitsweise.
             </p>
             <p class="text-center">
-              arriv0 lebt seine Werte auch technisch:
-              <span class="em">Green Hosting</span>, minimaler Serverbedarf und Dark Mode als Standard. Nachhaltigkeit ist keine Funktion, sie ist die Grundhaltung.
+              arriv0 lebt für und durch die aktive Community.
+              Scanne einfach den <span class="em">QR-Code</span>, und sei einer unserer ersten User.
+              Dein Feedback formt die App von Anfang an mit.
             </p>
           </div>
         </section>
@@ -581,7 +576,7 @@
               </svg>
             </div>
             <div class="title">Finden &amp; Entdecken</div>
-            <div class="desc">Interaktive Karte: Bio-Läden, Second Hand, Sharing, Repair — angepasst an deine Interessen.</div>
+            <div class="desc">Interaktive Karte: Bio-Läden, Second Hand, Sharing und Ähnliches. Angepasst an dich.</div>
           </div>
           <div class="feature">
             <div class="spacer">
@@ -592,7 +587,7 @@
               </svg>
             </div>
             <div class="title">Märkte &amp; Flohmärkte</div>
-            <div class="desc">Lendplatz, Kaiser-Josef, Andritz und alle Fetzenmärkte der Stadt — mit Erinnerungen.</div>
+            <div class="desc">Lendplatz, Kaiser-Josef, Andritz und alle Fetzenmärkte der Stadt. Mit Erinnerungen.</div>
           </div>
           <div class="feature">
             <div class="spacer">
@@ -605,7 +600,7 @@
               </svg>
             </div>
             <div class="title">Community &amp; Events</div>
-            <div class="desc">Workshops, Demos und Repair-Cafés — finden, merken, hingehen und erleben.</div>
+            <div class="desc">Workshops, Demos und Repair-Cafés. Finden, merken, hingehen und erleben.</div>
           </div>
           <div class="feature">
             <div class="spacer">
@@ -615,7 +610,7 @@
               </svg>
             </div>
             <div class="title">Lernen &amp; DIY</div>
-            <div class="desc">Reparaturanleitungen, Tipps für nachhaltigen Alltag, Kurse — kuratiert, nicht algorithmisch.</div>
+            <div class="desc">Reparaturanleitungen, Tipps für nachhaltigen Alltag, Kurse. Kuratiert, nicht algorithmisch.</div>
           </div>
         </section>
 
@@ -638,10 +633,10 @@
           <div class="col">
             <div class="k">Projekt</div>
             <div class="v">
-              Mobile App für junge Newcomer<br />
-              iOS &amp; Android · DE / EN<br />
-              Bewusst ohne KI · Green Hosting<br />
-              Dokumentation V1.4 · April 2026
+              FH Joanneum · AIM25<br />
+              Interface and Interaction Design<br />
+              Betreuer: Gerhard Sprung<br />
+              Kontakt: gerhard.sprung@fh-joanneum.at
             </div>
           </div>
           <div class="col contact">
