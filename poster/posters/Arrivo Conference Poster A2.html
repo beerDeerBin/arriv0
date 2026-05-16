@@ -206,6 +206,18 @@
         letter-spacing: -0.02em;
       }
 
+      /* Hero logo — bottom-right of the hero section */
+      .hero-logo {
+          position: absolute;
+          right: 9px;
+          bottom: -18px;
+          height: 180px;
+          width: auto;
+          opacity: 1;
+          z-index: 999;
+          transform: rotate(-4deg);
+      }
+
       /* Bird mark — anchored bottom-right, clearly below the headline */
       .bird-wrap {
         position: absolute;
@@ -455,8 +467,8 @@
       .colophon {
         padding: 30px 80px 28px;
         display: grid;
-        grid-template-columns: 1.2fr 1.2fr 1fr;
-        gap: 30px;
+        grid-template-columns: 1fr 1fr;
+        position: relative;
         font-family: var(--font-ui);
         flex-grow: 1;
         background: #c57952;
@@ -478,14 +490,36 @@
       .colophon .col .v .name {
         font-weight: 700;
       }
-      .colophon .col.contact {
-        position: relative;
+      .qr-cta {
+        position: absolute;
+        right: 80px;
+        bottom: 28px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+        position: absolute;
+        right: 5px;
+        bottom: 5px;
+      }
+      .qr-label {
+        font-family: var(--font-ui);
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        color: #2f2f2f;
+        color: var(--green);
+      }
+      .qr-arrow {
+        width: auto;
+        height: 50px;
       }
       .qr-code {
-        width: 160px;
-        height: 160px;
+        width: 200px;
+        height: 200px;
         display: block;
         border-radius: 6px;
+        border: solid;
       }
       .colophon .col .hash-big {
         font-family: var(--font-display);
@@ -531,13 +565,15 @@
             <div class="t2">Graz</div>
             <div class="t3">2026</div>
           </div>
+
+          <img src="../assets/Arrivo_Logo_Transparent.svg" alt="Arrivo" class="hero-logo" aria-hidden="true" />
         </section>
 
         <!-- 3. Subhead ribbon -->
         <div class="ribbon">
           <div class="hash">#gogreen</div>
           <div class="dot"></div>
-          <div class="label">Eine Community-App für junge Newcomer in Graz · iOS &amp; Android</div>
+          <div class="label">Eine Community-App für junge Newcomer in Graz</div>
         </div>
 
         <!-- 4. Manifesto -->
@@ -639,9 +675,10 @@
               Kontakt: gerhard.sprung@fh-joanneum.at
             </div>
           </div>
-          <div class="col contact">
-            <div class="k">Prototype</div>
-            <img src="../assets/qrcode.svg" alt="QR-Code zum Prototype" class="qr-code" />
+          <div class="qr-cta">
+            <span class="qr-label">Jetzt ausprobieren</span>
+            <img src="../assets/Up right.svg" alt="" class="qr-arrow" />
+            <img src="../assets/qr-code.svg" alt="QR-Code zum Prototype" class="qr-code" />
           </div>
         </footer>
       </article>
