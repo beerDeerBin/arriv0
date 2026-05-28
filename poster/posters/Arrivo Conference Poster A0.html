@@ -2,14 +2,14 @@
 <html lang="de">
   <head>
     <meta charset="utf-8" />
-    <title>Arrivo — Conference Poster (A2)</title>
+    <title>Arrivo — Conference Poster (A0)</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Krona+One&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" />
     <style>
       /* ─────────────────────────────────────────────────────────────────
-     Arrivo · A2 Conference Poster
-     Design canvas: 1240 × 1754 px  (A2 portrait, 1:√2)
+     Arrivo · A0 Conference Poster
+     Design canvas: 1240 × 1754 px  (scaled 2× to A0 portrait, 1:√2)
      ───────────────────────────────────────────────────────────────── */
 
       :root {
@@ -51,12 +51,12 @@
       .poster {
         position: relative;
         /* Design canvas: 1240×1754 px, kept in px so internal sizing stays sharp.       */
-        /* `zoom` then enlarges the whole thing to A2 physical size (420×594mm ≈ 1587×2244 */
-        /* CSS px at 96dpi). Browser zoom (Cmd/Ctrl + ±) still works ON TOP of this, so   */
-        /* you can zoom in to inspect details normally.                                  */
+        /* `zoom` then enlarges the whole thing to A0 physical size (841×1189mm ≈ 3179×4489 */
+        /* CSS px at 96dpi). A0 is 2× A2 in each dimension, so zoom = 1.281 × 2 = 2.562. */
+        /* Browser zoom (Cmd/Ctrl + ±) still works ON TOP of this.                       */
         width: 1240px;
         height: 1754px;
-        zoom: 1.281;
+        zoom: 2.562;
         background: var(--paper);
         color: var(--ink);
         overflow: hidden;
@@ -74,9 +74,9 @@
         flex-direction: column;
       }
 
-      /* True A2 paper size for print/PDF export */
+      /* True A0 paper size for print/PDF export */
       @page {
-        size: A2 portrait;
+        size: A0 portrait;
         margin: 0;
       }
       @media print {
@@ -92,11 +92,10 @@
           display: block;
         }
         .poster {
-          zoom: 1;
-          width: 420mm;
-          height: 594mm;
+          /* zoom: 2.562 from the main rule stays — 1240px × 2.562 ≈ 841mm (A0 width) */
+          width: 1240px;
+          height: 1754px;
           box-shadow: none;
-          transform: none;
         }
       }
 
@@ -535,7 +534,7 @@
   <body>
     <div class="stage">
       <article class="poster" id="poster" data-screen-label="A2 Conference Poster">
-        <div class="page-no-tl" style="display: none">A2 · Portrait · 420 × 594 mm</div>
+        <div class="page-no-tl" style="display: none">A0 · Portrait · 841 × 1189 mm</div>
 
         <!-- 1. Top brand bar -->
         <header class="top-bar">
@@ -688,7 +687,7 @@
 
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script>
-      // No transform-based scaling — the poster is at true A2 size via CSS `zoom`.
+      // No transform-based scaling — the poster is at true A0 size via CSS `zoom`.
       // Browser zoom (Cmd/Ctrl + plus/minus, pinch) works normally on top of this.
       // If you want a fit-to-window override, use the browser's zoom-out.
     </script>

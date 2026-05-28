@@ -13,6 +13,7 @@ import MobileHome from "./pages/mobile/Home";
 import MobileMap from "./pages/mobile/Map";
 import MobileEvents from "./pages/mobile/Events";
 import MobileProfile from "./pages/mobile/Profile";
+import Poster from "./pages/Poster";
 
 export const router = createHashRouter([
   {
@@ -28,6 +29,7 @@ export const router = createHashRouter([
       { path: "dummy/map", Component: PrototypeMap },
       { path: "dummy/events", Component: PrototypeEvents },
       { path: "dummy/profile", Component: PrototypeProfile },
+      { path: "poster", Component: Poster },
     ],
   },
   { path: "/mobile", Component: MobileOnboarding },

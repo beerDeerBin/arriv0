@@ -73,6 +73,18 @@ export default function Root() {
               >
                 Klickdummy Mobile
               </NavLink>
+              <NavLink
+                to="/poster"
+                className={({ isActive }) =>
+                  `px-4 py-2 rounded-lg transition-colors ${
+                    isActive
+                      ? "bg-emerald-100 text-emerald-700 font-medium"
+                      : "text-neutral-700 hover:bg-neutral-100"
+                  }`
+                }
+              >
+                Poster
+              </NavLink>
             </nav>
 
             {/* Mobile menu button */}
@@ -138,6 +150,19 @@ export default function Root() {
                 }
               >
                 Klickdummy Mobile
+              </NavLink>
+              <NavLink
+                to="/poster"
+                onClick={() => setMobileMenuOpen(false)}
+                className={({ isActive }) =>
+                  `block px-4 py-2 rounded-lg transition-colors ${
+                    isActive
+                      ? "bg-emerald-100 text-emerald-700 font-medium"
+                      : "text-neutral-700 hover:bg-neutral-100"
+                  }`
+                }
+              >
+                Poster
               </NavLink>
             </nav>
           )}
