@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <title>Arrivo · Rollen-Flyer (A4)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Krona+One&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" />
+    <style>
+      /* ─────────────────────────────────────────────────────────────────
+     Arrivo · A4 Rollen-Flyer
+     Design canvas: 794 × 1123 px (A4 portrait at 96dpi)
+     Shares the visual language of the A0/A2 conference poster.
+     ───────────────────────────────────────────────────────────────── */
+
+      :root {
+        --green: #0e500f;
+        --green-2: #33b135;
+        --mint: #b0ddb1;
+        --sage: #e4f0e4;
+        --sand: #cdac7d;
+        --terracotta: #c57952;
+        --paper: #f4f1e8;
+        --ink: #14201a;
+        --ink-soft: #4a5a4d;
+        --font-display: "Krona One", "Arial Black", "Helvetica Neue", sans-serif;
+        --font-ui: "Plus Jakarta Sans", system-ui, sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html,
+      body {
+        background: #2a2a2a;
+        min-height: 100%;
+        font-family: var(--font-ui);
+      }
+
+      .stage {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 24px;
+      }
+
+      .flyer {
+        position: relative;
+        width: 794px;
+        height: 1123px;
+        background: var(--paper);
+        color: var(--ink);
+        overflow: hidden;
+        background-image: radial-gradient(rgba(20, 32, 26, 0.03) 1px, transparent 1.5px), radial-gradient(rgba(20, 32, 26, 0.02) 1px, transparent 1.5px);
+        background-size:
+          18px 18px,
+          33px 33px;
+        background-position:
+          0 0,
+          9px 9px;
+        box-shadow:
+          0 30px 80px rgba(0, 0, 0, 0.4),
+          0 8px 20px rgba(0, 0, 0, 0.25);
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* True A4 paper size for print/PDF export */
+      @page {
+        size: A4 portrait;
+        margin: 0;
+      }
+      @media print {
+        html,
+        body {
+          background: #fff;
+          margin: 0;
+          padding: 0;
+        }
+        .stage {
+          padding: 0;
+          min-height: 0;
+          display: block;
+        }
+        .flyer {
+          box-shadow: none;
+        }
+      }
+
+      /* ── 1. Top brand bar ───────────────────────────────────────── */
+      .top-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding: 60px 48px 0;
+        height: 60px;
+        flex-shrink: 0;
+      }
+      .top-logo {
+        height: 50px;
+        width: auto;
+        display: block;
+      }
+      .top-meta {
+        text-align: right;
+        font-family: var(--font-ui);
+      }
+      .top-meta .k {
+        font-size: 9px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--ink);
+        font-weight: 700;
+        opacity: 0.45;
+        margin-bottom: 3px;
+      }
+      .top-meta .v {
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--ink);
+      }
+
+      .rule {
+        height: 2px;
+        background: var(--ink);
+        margin: 16px 48px 0;
+        opacity: 0.9;
+        flex-shrink: 0;
+      }
+
+      /* ── 2. Hero ────────────────────────────────────────────────── */
+      .hero {
+        position: relative;
+        padding: 24px 48px 8px;
+        flex-shrink: 0;
+      }
+      .eyebrow-top {
+        font-family: var(--font-ui);
+        font-weight: 800;
+        font-size: 12px;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: var(--green);
+        margin-bottom: 12px;
+        display: block;
+      }
+      .headline {
+        font-family: var(--font-display);
+        color: var(--ink);
+        letter-spacing: -0.015em;
+        line-height: 0.96;
+        position: relative;
+        z-index: 3;
+      }
+      .headline .l1 {
+        font-size: 52px;
+        display: block;
+      }
+      .headline .l2 {
+        font-size: 52px;
+        display: block;
+        color: var(--green);
+      }
+      .headline .sub {
+        display: block;
+        font-family: var(--font-ui);
+        font-weight: 600;
+        font-size: 17px;
+        color: var(--ink-soft);
+        margin-top: 16px;
+        letter-spacing: -0.01em;
+        line-height: 1.45;
+        max-width: 700px;
+      }
+
+      .hero-logo {
+        position: absolute;
+        right: 60px;
+        bottom: 100px;
+        height: 96px;
+        width: auto;
+        z-index: 1;
+        transform: rotate(-4deg);
+        opacity: 0.95;
+      }
+
+      /* ── 3. Roles ──────────────────────────────────────────────── */
+      .roles {
+        padding: 22px 48px 0;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        flex-grow: 1;
+      }
+      .role {
+        display: grid;
+        grid-template-columns: 64px 1fr;
+        gap: 22px;
+        align-items: start;
+        padding-top: 18px;
+        border-top: 2px solid var(--ink);
+      }
+      .role .badge {
+        position: relative;
+      }
+      .role .num {
+        font-family: var(--font-display);
+        font-size: 30px;
+        color: var(--green);
+        line-height: 1;
+        display: block;
+      }
+      .role .ricon {
+        width: 40px;
+        height: 40px;
+        stroke: var(--ink);
+        stroke-width: 1.5;
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        display: block;
+        margin-top: 14px;
+      }
+      .role .head {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        flex-wrap: wrap;
+        margin-bottom: 8px;
+      }
+      .role .title {
+        font-family: var(--font-display);
+        font-size: 25px;
+        color: var(--ink);
+        letter-spacing: -0.01em;
+        line-height: 1;
+      }
+      .role .tag {
+        font-family: var(--font-ui);
+        font-weight: 700;
+        font-size: 10px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--terracotta);
+        padding: 3px 9px;
+        border: 1.5px solid var(--terracotta);
+        border-radius: 999px;
+      }
+      .role .tag.green {
+        color: var(--green);
+        border-color: var(--green);
+      }
+      .role .desc {
+        font-family: var(--font-ui);
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1.5;
+        color: var(--ink);
+        max-width: 600px;
+      }
+      .role .desc .em {
+        font-weight: 700;
+        color: var(--green);
+      }
+      .role .points {
+        list-style: none;
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .role .points li {
+        font-family: var(--font-ui);
+        font-size: 13px;
+        line-height: 1.4;
+        color: var(--ink-soft);
+        padding-left: 18px;
+        position: relative;
+      }
+      .role .points li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 7px;
+        width: 7px;
+        height: 7px;
+        background: var(--green-2);
+        border-radius: 50%;
+      }
+
+      /* Privacy highlight inside USER role */
+      .privacy {
+        margin-top: 12px;
+        background: var(--sage);
+        border-left: 4px solid var(--green);
+        padding: 12px 16px;
+        border-radius: 0 10px 10px 0;
+      }
+      .privacy .ph {
+        font-family: var(--font-ui);
+        font-weight: 800;
+        font-size: 11px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--green);
+        margin-bottom: 4px;
+      }
+      .privacy .pt {
+        font-family: var(--font-ui);
+        font-size: 13px;
+        line-height: 1.5;
+        color: var(--ink);
+      }
+      .privacy .pt .em {
+        font-weight: 700;
+        color: var(--green);
+      }
+
+      /* ── 4. Footer ─────────────────────────────────────────────── */
+      .colophon {
+        margin-top: auto;
+        padding: 20px 48px 20px;
+        background: var(--terracotta);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        flex-shrink: 0;
+      }
+      .colophon .quote {
+        font-family: var(--font-display);
+        font-size: 26px;
+        line-height: 1.1;
+        color: #2f2f2f;
+        letter-spacing: -0.01em;
+      }
+      .colophon .quote .acc {
+        color: var(--green);
+      }
+      .colophon .meta {
+        text-align: left;
+        font-family: var(--font-ui);
+      }
+      .colophon .meta .k {
+        font-size: 13px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: #2f2f2f;
+        font-weight: 900;
+        margin-bottom: 4px;
+      }
+      .colophon .meta .v {
+        font-size: 12px;
+        color: #2f2f2f;
+        font-weight: 500;
+        line-height: 1.5;
+      }
+      .colophon .meta .v .name {
+        font-weight: 700;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="stage">
+      <article class="flyer" id="flyer">
+        <!-- 1. Top brand bar -->
+        <header class="top-bar">
+          <img src="../assets/Arrivo_Logo_Transparent.svg" alt="Arrivo" class="top-logo" />
+          <div class="top-meta">
+            <div class="k">Projekt-Überblick</div>
+            <div class="v">Wer macht was bei arriv0?</div>
+          </div>
+        </header>
+
+        <div class="rule"></div>
+
+        <!-- 2. Hero -->
+        <section class="hero">
+          <span class="eyebrow-top">Drei Rollen · Eine Community</span>
+          <h1 class="headline">
+            <span class="l1">Mitmachen</span>
+            <span class="l2">bei arriv0.</span>
+            <span class="sub">
+              arriv0 verbindet drei Rollen zu einer nachhaltigen Community-App für Graz: vom Betrieb der Plattform über die Veranstalter bis zu dir als Nutzer:in.
+            </span>
+          </h1>
+          <img src="../assets/Arrivo_Logo_Big_Transparent_Without_Font.svg" alt="" class="hero-logo" aria-hidden="true" />
+        </section>
+
+        <!-- 3. Roles -->
+        <section class="roles">
+          <!-- BETREIBER -->
+          <div class="role">
+            <div class="badge">
+              <span class="num">01</span>
+              <svg class="ricon" viewBox="0 0 24 24">
+                <path d="M3 21h18M5 21V8l7-5 7 5v13" />
+                <path d="M9 21v-6h6v6" />
+              </svg>
+            </div>
+            <div>
+              <div class="head">
+                <span class="title">Betreiber</span>
+                <span class="tag green">Trägt die Plattform</span>
+              </div>
+              <p class="desc">
+                Betreibt und pflegt arriv0 als Plattform und stellt Server, Wartung und den verlässlichen Rahmen für alle bereit. Aktuell die <span class="em">FH Joanneum</span>, langfristig auch jede andere Organisation, die das Projekt weitertragen möchte.
+              </p>
+              <ul class="points">
+                <li>Sorgt für Betrieb, Datenschutz und Weiterentwicklung der App.</li>
+                <li>Hält Kosten schlank durch einen bewusst energieeffizienten Ansatz.</li>
+                <li>Offen für eine spätere Übergabe an interessierte Träger.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- ORGANISATOR -->
+          <div class="role">
+            <div class="badge">
+              <span class="num">02</span>
+              <svg class="ricon" viewBox="0 0 24 24">
+                <rect x="3" y="4" width="18" height="17" rx="2" />
+                <path d="M3 9h18M8 2v4M16 2v4M8 14l3 3 5-6" />
+              </svg>
+            </div>
+            <div>
+              <div class="head">
+                <span class="title">Organisator</span>
+                <span class="tag">Account erforderlich</span>
+              </div>
+              <p class="desc">
+                Veranstalter:innen, die über arriv0 <span class="em">Events publizieren</span>, etwa einen nachhaltigen Flohmarkt, ein Repair-Café oder einen Workshop. Sie erstellen, verwalten und bewerben ihre Veranstaltungen in der App.
+              </p>
+              <ul class="points">
+                <li>Benötigen ein <span style="font-weight:700">Nutzerkonto</span>, um Events zu veröffentlichen und zu pflegen.</li>
+                <li>Erreichen direkt eine engagierte, nachhaltig denkende Community.</li>
+                <li>Behalten den Überblick über ihre Termine, Orte und Reichweite.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- USER -->
+          <div class="role">
+            <div class="badge">
+              <span class="num">03</span>
+              <svg class="ricon" viewBox="0 0 24 24">
+                <circle cx="12" cy="8" r="4" />
+                <path d="M4 21a8 8 0 0 1 16 0" />
+              </svg>
+            </div>
+            <div>
+              <div class="head">
+                <span class="title">User</span>
+                <span class="tag green">Kein Account nötig</span>
+              </div>
+              <p class="desc">
+                Nutzer:innen entdecken Bio-Läden, Flohmärkte, Sharing-Angebote und Events und merken sich, was sie interessiert. Die App passt sich an dich an, ganz <span class="em">ohne Verpflichtung</span>.
+              </p>
+              <ul class="points">
+                <li>Speichern ihre Daten <span style="font-weight:700">lokal auf dem Gerät</span>: kein Konto, kein Login nötig.</li>
+                <li>Können optional ein Konto anlegen, um Daten <span style="font-weight:700">geräteübergreifend</span> zu sichern. Freiwillig.</li>
+                <li>Behalten die volle Kontrolle: weniger Serverkosten, mehr Privatsphäre.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. Footer -->
+        <footer class="colophon">
+          <div class="meta">
+            <div class="k">Projekt</div>
+            <div class="v">
+              <span class="name">Hochschule</span> · FH Joanneum<br />
+              <span class="name">Kurs</span> · Interface and Interaction Design<br />
+              <span class="name">Betreuer</span> · Gerhard Sprung<br />
+              <span class="name">Kontakt</span> · gerhard.sprung@fh-joanneum.at
+            </div>
+          </div>
+          <div class="quote">Bei Null anfangen,<br /><span class="acc">grün weitermachen.</span></div>
+        </footer>
+      </article>
+    </div>
+  </body>
+</html>

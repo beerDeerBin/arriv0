@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 import { ArrowLeft } from "lucide-react";
 
-export default function Poster() {
+export default function Flyer() {
   return (
     <div className="w-full h-screen relative">
       <Link
@@ -12,8 +12,8 @@ export default function Poster() {
         Zurück
       </Link>
       <iframe
-        src="/poster/poster.html"
-        title="Arrivo Conference Poster A2"
+        src="/poster/flyer.html"
+        title="Arrivo Rollen-Flyer A4"
         className="w-full h-full border-0"
       />
     </div>

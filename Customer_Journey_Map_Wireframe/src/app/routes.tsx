@@ -14,6 +14,7 @@ import MobileMap from "./pages/mobile/Map";
 import MobileEvents from "./pages/mobile/Events";
 import MobileProfile from "./pages/mobile/Profile";
 import Poster from "./pages/Poster";
+import Flyer from "./pages/Flyer";
 
 export const router = createHashRouter([
   {
@@ -30,6 +31,7 @@ export const router = createHashRouter([
       { path: "dummy/events", Component: PrototypeEvents },
       { path: "dummy/profile", Component: PrototypeProfile },
       { path: "poster", Component: Poster },
+      { path: "flyer", Component: Flyer },
     ],
   },
   { path: "/mobile", Component: MobileOnboarding },
